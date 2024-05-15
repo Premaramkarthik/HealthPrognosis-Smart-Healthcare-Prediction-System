@@ -1,0 +1,19 @@
+<head>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+
+<div class="container">
+  <h1 class="heading">Healthcare</h1>
+  <img src="{{ url_for('static', filename='doc.jpg') }}"  class="image-with-border" alt="" height="75" width="120">
+  <div class="button">
+    <a href="{{ url_for('index_heart') }}"><button>Heart Disease Prediction</button></a>
+    <a href="{{ url_for('index_stroke') }}"><button>Heart Stroke Prediction</button></a>
+    <a href="{{ url_for('index_kidney') }}"><button>Kidney Disease Prediction</button></a>
+    <a href="{{ url_for('index_liver') }}"><button>Liver Disease Prediction</button></a>
+    <a href="{{ url_for('index_cancer') }}"><button>Breast Cancer Prediction</button></a>
+    <a href="{{ url_for('index_diabetic') }}"><button>Diabetics Prediction</button></a>
+  </div>
+</div>
+
+

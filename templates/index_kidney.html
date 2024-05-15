@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" contents ="width=device-width,initial-sscle=1.0"> 
+    <title>Kidney Disease Prediction</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+
+</head>
+
+<body>
+  <div class="login" style="text-align: center;">
+       <h1 style="color:voilet"> Kidney Disease Prediction </h1>
+        <img src="{{ url_for('static', filename='kidney-pic.jpg') }}" alt="Kidney-Disease-Picture" width="500" height="300"> <br><br><br>
+       <form action ="{{url_for('predict_kidney')}}"method="POST">
+	   
+	    <div> Age: <input type="text" name="age" placeholder="Enter age" required="required" /></div><br>
+            <div> BP: <input type="text" name="bp" placeholder="Enter bp" required="required" /></div><br>
+            <div> SG: <input type="text" name="sg" placeholder="Enter sg" required="required" /></div><br>
+            <div> al: <input type="text" name="al" placeholder="Enter al" required="required" /></div><br>
+            <div> su: <input type="text" name="su" placeholder="Enter su" required="required" /></div><br>
+            <div style="padding: auto;"> 
+              <label for="rbc">RBC:</label>
+              <select name="rbc" id="">
+                <option value="1">Normal</option>
+                <option value="0">Abnormal</option>
+              </select>
+            </div><br>
+            <div> <label for="pc">PC:</label>
+            <select name="pc" id="">
+              <option value="1">Normal</option>
+              <option value="0">Abnormal</option>
+            </select></div><br>
+            <div> 
+              <label for="pcc">Pcc:</label>
+              <select name="pcc" id="">
+                <option value="1">Present</option>
+                <option value="0">Not present</option>
+              </select>
+            </div><br>
+            <div><label for="ba">Ba:</label>
+            <select name="ba" id="">
+              <option value="1">Present</option>
+              <option value="0">Not present</option>
+            </select></div><br>
+            <div> bgr: <input type="text" name="bgr" placeholder="Enter bgr" required="required" /></div><br>
+            <div> bu: <input type="text" name="bu" placeholder="Enter bu" required="required" /></div><br>
+            <div> sc: <input type="text" name="sc" placeholder="Enter sc" required="required" /></div><br>
+            <div> sod: <input type="text" name="sod" placeholder="Enter sod" required="required" /></div><br>
+            <div> pot: <input type="text" name="pot" placeholder="Enter pot" required="required" /></div><br>
+            <div> hemo: <input type="text" name="hemo" placeholder="Enter hemo" required="required" /></div><br>
+            <div> pcv: <input type="text" name="pcv" placeholder="Enter pcv" required="required" /></div><br>
+            <div> wc: <input type="text" name="wc" placeholder="Enter wc" required="required" /></div><br>
+            <div> rc: <input type="text" name="rc" placeholder="Enter rc" required="required" /></div><br>
+            <div> <label for="htn">HTN:</label>
+            <select name="htn" id="">
+              <option value="1">Yes</option>
+              <option value="0">No</option>
+            </select></div><br>
+            <div> <label for="dm">Dm:</label>
+            <select name="dm" id="Dm">
+              <option value="1">no</option>
+            <option value="2">yes</option></select>
+          </div><br>
+            <div> <label for="cad">CAD:</label>
+            <select name="cad" id="">
+              <option value="1">Yes</option>
+              <option value="0">No</option>
+            </select></div><br>
+            <div> <label for="appet">Appet:</label>
+            <select name="appet" id="">
+              <option value="0">Poor</option>
+              <option value="1">Good</option>
+            </select></div><br>
+            <div> <label for="pe">pe:</label>
+            <select name="pe" id="">
+              <option value="1">Yes</option>
+              <option value="0">No</option>
+            </select></div><br>
+            <div> <label for="ane">Ane:</label>
+            <select name="ane" id="ane">
+              <option value="1">Yes</option>
+              <option value="0">No</option>
+            </select></div><br>
+
+            <button type ="submit" class="btn btn-primary btn-block btn-large" style="height:30px; width:60px">Predict</button>
+        </form>
+ 
+        <br>
+        <br>
+        <div style="text-align: center;"><h4 style="color:voilet;"> {{prediction_text}} </h4></div>
+
+  </div>
+
+</body>
+</html>
+            
+            
+            
+            

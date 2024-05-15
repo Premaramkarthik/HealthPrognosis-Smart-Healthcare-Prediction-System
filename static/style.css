@@ -1,0 +1,34 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.heading {
+  font-size: 36px;
+  margin-top: 50px;
+}
+
+.image-with-border {
+  width: 500px;
+  height: 300px;
+  margin-top: 10px;
+  border: 5px solid black; /* Adjust the border size and color as needed */
+}
+
+
+button {
+  display: inline-block;
+  width: 200px;
+  height: 50px;
+  background-color: green;
+  color: white;
+  border-radius: 10px;
+  font-size: 20px;
+   margin-top: 30px;
+    margin-right: 20px;
+  width: 30%;
+
+
+}
+

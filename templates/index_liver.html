@@ -1,0 +1,47 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" contents ="width=device-width,initial-scale=1.0"> 
+    <title>Liver Disease Prediction</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+
+</head>
+
+<body>
+  <div class="login" style="text-align: center;">
+       <h1 style="color:voilet;">Liver Disease Prediction</h1>
+       <img src="{{ url_for('static', filename='liver_pic.jpg') }}"  alt="" width="500" height="300"> <br><br><br>
+
+       <form action ="{{url_for('predict_liver')}}"method="POST">
+
+	   </style>
+	   <div> Age: <input type="text" name="Age" placeholder="Enter Age" required="required" /></div><br>
+           <div> 
+            <label for="gender">Gender</label>
+            <select name="gender" id="">
+              <option value="1">Male</option>
+              <option value="0">Female</option>
+            </select>
+           </div><br>
+           <div>  Total_Bilirubin: <input type="text" name="Total_Bilirubin" placeholder="Enter Total_Bilirubin" required="required" /></div><br>
+           <div>  Direct_Bilirubin: <input type="text" name="Direct_Bilirubin" placeholder="Enter Direct_Bilirubin" required="required" /></div><br>
+           <div>  Alkaline_Phosphotase: <input type="text" name="Alkaline_Phosphotase" placeholder="Enter Alkaline_Phosphotase" required="required" /></div><br>
+           <div>  Alamine_Aminotransferase: <input type="text" name="Alamine_Aminotransferase" placeholder="Enter Alamine_Aminotransferase" required="required" /></div><br>
+           <div>  Aspartate_Aminotransferase: <input type="text" name="Aspartate_Aminotransferase" placeholder="Enter Aspartate_Aminotransferase" required="required" /></div><br>
+           <div>  Total_Protiens: <input type="text" name="Total_Protiens" placeholder="Enter Total_Protiens" required="required" /></div><br>
+           <div>  Albumin: <input type="text" name="Albumin" placeholder="Enter Albumin" required="required" /></div><br>
+           <div>  Albumin_and_Globulin_Ratio: <input type="text" name="Albumin_and_Globulin_Ratio" placeholder="Enter Albumin_and_Globulin_Ratio" required="required" /></div><br>
+           <button type="Submit" class="btn btn-primary">Predict</button>
+
+          </form>
+ 
+        <br>
+        <br>
+        <div style="text-align: center;"><h4 style="color:voilet;">{{prediction_text}} </h4></div>
+
+  </div>
+
+</body>
+</html>
+            
+            

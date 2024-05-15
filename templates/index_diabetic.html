@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" contents ="width=device-width,initial-scale=1.0"> 
+    <title>Diabetic Disease Prediction</title>
+</head>
+
+<body>
+  <div class="login" style="text-align: center;">
+       <h1 style="color:voilet">Diabetic Disease Prediction</h1>
+       <img src="{{ url_for('static', filename='Liver-Doctor-Diabetes.jpg') }}" alt="Diabetic-Picture" width="500" height="300"> <br><br><br>
+       <form action ="{{url_for('predict_diabetic')}}"method="POST">
+
+	   
+	   <div> Pregnancies: <input type="text" name="Pregnancies" placeholder="Enter Pregnancies" required="required" /></div><br>
+           <div>  Glucose: <input type="text" name="Glucose" placeholder="Enter Glucose" required="required" /></div><br>
+           <div>  BloodPressure: <input type="text" name="BloodPressure" placeholder="Enter BloodPressure" required="required" /></div><br>
+           <div>  SkinThickness: <input type="text" name="SkinThickness" placeholder="Enter SkinThickness" required="required" /></div><br>
+           <div>  Insulin: <input type="text" name="Insulin" placeholder="Enter Insulin" required="required" /></div><br>
+           <div>  BMI: <input type="text" name="BMI" placeholder="Enter BMI" required="required" /></div><br>
+           <div>  DiabetesPedigreeFunction: <input type="text" name=" Enter DiabetesPedigreeFunction" placeholder="DiabetesPedigreeFunction" required="required" /></div><br>
+
+            
+
+            <button type ="submit" class="btn btn-primary btn-block btn-large" style="height:30px; width:60px">Predict</button>
+        </form>
+ 
+        <br>
+        <br>
+        <div style="text-align: center;"><h4 style="color:voilet;">{{prediction_text}} </h4></div>
+
+  </div>
+
+</body>
+</html>
+            
+            
+            
+            

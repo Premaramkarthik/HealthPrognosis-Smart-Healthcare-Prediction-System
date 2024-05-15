@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" contents ="width=device-width,initial-scale=1.0"> 
+    <title>Heart Stroke Prediction</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+
+</head>
+
+<body>
+  <div class="login" style="text-align: center;">
+       <h1 style="color:voilet">  Heart Stroke Prediction </h1>
+        <img src="{{ url_for('static', filename='stroke-pic.jpg') }}" alt="Heart-Stroke-Picture" width="500" height="300"> <br><br><br>
+       <form action ="{{url_for('predict_stroke')}}" method="POST">
+            <div style="margin-top: 10px;margin-bottom: 10px;">
+
+  <label for="Gender">Gender</label>
+    <select name="Gender" id="Gender" >
+    <option value="0">Female</option>
+    <option value="1">Male</option>
+    <option value="2">Others</option>
+  </select>
+            </div>
+<!--</form>-->
+</div>	   
+            <div style="text-align: center;"> Age: <input type="text" name="age" placeholder="Enter age" required="required" /></div><br>
+            <div style="text-align: center;"> hypertension: <input type="text" name="hypertension" placeholder="Enter hypertension" required="required" /></div><br>
+            <div style="text-align: center;"> heart_disease: <input type="text" name="heart_disease" placeholder="Enter heart_disease" required="required" /></div><br>
+<!--	    <form>-->
+        <div style="margin-top: 0px;margin-bottom: 20px;text-align: center;">
+          <label for="Married">Married</label>
+		<select name="Married" id ="Married" required="required">
+    		<option value="0">No</option>
+    		<option value="1">Yes</option>
+  		</select>
+        </div>
+		
+<!--		</form>-->
+    <div style="text-align: center;">
+      <label for="Work Typed">Work Typed</label>
+            <select name="Work Typed" id="Work Typed" required="required">
+    				<option value="0">Govt job</option>
+    				<option value="1">New worker</option>
+    				<option value="2">Private</option>
+            <option value="3">Self employed</option>
+            <option value="4">Children</option>
+          </select>
+    </div>
+<!--		<form>-->
+			<br>
+      <div style="text-align: center;">
+        <label for="Residence type">Residence type</label>
+          <select name="Residence type" id="Residence type">
+            <option value="1">Urban</option>
+            <option value="0">Rural</option>
+          </select>
+      </div>
+      <br>
+          
+          
+          
+            <div style="text-align: center;"> avg_glucose_level: <input type="text" name="avg_glucose_level" placeholder="Enter avg_glucose_level" required="required" /></div><br>
+
+            <div style="text-align: center;"> bmi: <input type="text" name="bmi" placeholder="Enter bmi" required="required" /></div><br>
+            <div style="text-align: center;">
+                <label for="Smoking Status">Smoking Status</label></div>
+            <div style="text-align: center;">
+              <select name="Smoking Status" id="Smoking Status">
+                <option value="0">Unknown</option>
+                <option value="1">Formely Smoked</option>
+                <option value="2">Never smoked</option>
+                <option value="3">Smokes</option>
+              </select>
+              <br>
+            </div>
+            
+
+            <div style="text-align: center;">
+              <br>
+              <button type="Submit" class="btn btn-primary">Predict</button>
+            </div>
+        </form>
+ 
+        <br>
+        <br>
+        <div style="text-align: center;"><h4 style="color:voilet;">{{prediction_text}} </h4></div>
+
+  </div>
+
+</body>
+</html>
